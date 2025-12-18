@@ -17,8 +17,22 @@ addToCartButtons.forEach(button => {
         const productName = this.parentElement.nextElementSibling.querySelector('h3').textContent;
         const price = this.parentElement.nextElementSibling.querySelector('.sale-price').textContent;
         
-        // Simple notification
-        alert(`${productName} added to cart!\nPrice: ${price}`);
+        // Create a more informative notification
+        const notification = document.createElement('div');
+        notification.className = 'cart-notification';
+        notification.innerHTML = `
+            <i class="fas fa-check-circle"></i>
+            <div>
+                <strong>${productName}</strong> added to cart!
+                <br>${price}
+            </div>
+        `;
+        document.body.appendChild(notification);
+        
+        // Remove notification after 3 seconds
+        setTimeout(() => {
+            notification.remove();
+        }, 3000);
     });
 });
 

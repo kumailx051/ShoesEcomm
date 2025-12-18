@@ -429,6 +429,7 @@ body {
     display: flex;
     gap: 1rem;
     align-items: center;
+    margin-bottom: 1rem;
 }
 
 .original-price {
@@ -441,6 +442,53 @@ body {
     font-size: 1.3rem;
     font-weight: 700;
     color: var(--primary-color);
+}
+
+.product-features {
+    list-style: none;
+    padding: 0;
+    margin: 1rem 0;
+    border-top: 1px solid var(--border-color);
+    padding-top: 1rem;
+}
+
+.product-features li {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 0.6rem;
+    font-size: 0.9rem;
+    color: var(--text-dark);
+}
+
+.product-features i {
+    color: #4ecdc4;
+    font-size: 0.9rem;
+}
+
+.whatsapp-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: #25D366;
+    color: white;
+    padding: 0.7rem 1.5rem;
+    border-radius: 25px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    margin-top: 1rem;
+    font-size: 0.95rem;
+}
+
+.whatsapp-link:hover {
+    background: #128C7E;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(37, 211, 102, 0.3);
+}
+
+.whatsapp-link i {
+    font-size: 1.2rem;
 }
 
 /* ===========================
@@ -704,6 +752,38 @@ body {
 /* ===========================
    Responsive Design
    =========================== */
+
+.cart-notification {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background: #4ecdc4;
+    color: white;
+    padding: 1rem 1.5rem;
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    z-index: 10000;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    animation: slideInRight 0.4s ease;
+}
+
+.cart-notification i {
+    font-size: 1.5rem;
+}
+
+@keyframes slideInRight {
+    from {
+        opacity: 0;
+        transform: translateX(100px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
 @media (max-width: 768px) {
     .hero {
         grid-template-columns: 1fr;
